@@ -1,0 +1,33 @@
+@* @model IEnumerable<DotNetAssignment.Models.Customer>
+
+<h2>Customers</h2>
+
+@foreach (var item in Model)
+{
+    <p>@item.Name - @item.Email</p>
+} *@
+
+@model IEnumerable<DotNetAssignment.Models.Customer>
+
+<h2>Customers</h2>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Details</th>
+    </tr>
+
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td>@customer.Name</td>
+            <td>@customer.Email</td>
+            <td>
+                <a asp-controller="Customer" asp-action="Details" asp-route-id="@customer.Id">View</a>
+            </td>
+        </tr>
+    }
+</table>

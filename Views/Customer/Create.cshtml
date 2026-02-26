@@ -1,0 +1,17 @@
+@model DotNetAssignment.Models.Customer
+
+<h2>Create Customer</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="email" />
+    </div>
+    <button type="submit">Add Customer</button>
+</form>
+
+<a asp-controller="Customer" asp-action="Index">Back to Customer List</a>
